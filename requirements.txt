@@ -4,4 +4,3 @@ pypdf
 chromadb
 tiktoken
 Pysqlite3-binary
-angchain_community
