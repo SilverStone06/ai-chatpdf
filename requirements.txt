@@ -4,4 +4,3 @@ pypdf
 chromadb
 tiktoken
 sqlite3==3.43.2
-langchain_community
