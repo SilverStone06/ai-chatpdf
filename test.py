@@ -5,9 +5,9 @@ sys.modules['pysqlite3'] = sys.modules.pop('pysqlite3')
 #업로드라 필요X
 #from dotenv import load_dotenv
 #load_dotenv()
-import os
+#import os
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_community.vectorstores import Chroma
+import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
