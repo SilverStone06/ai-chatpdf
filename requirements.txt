@@ -3,4 +3,5 @@ langchain-openai
 pypdf
 chromadb
 tiktoken
-Pysqlite3-binary==0.5.2.post3
+Pysqlite3-binary
+angchain_community.vectorstores
