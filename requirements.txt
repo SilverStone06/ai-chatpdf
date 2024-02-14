@@ -4,4 +4,4 @@ pypdf
 chromadb
 tiktoken
 Pysqlite3-binary
-langchain_community.vectorstores
+langchain_community
