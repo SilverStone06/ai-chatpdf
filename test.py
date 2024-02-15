@@ -13,7 +13,7 @@ from langchain.chains import RetrievalQA
 import streamlit as st
 import tempfile
 from streamlit_extras.buy_me_a_coffee import button
-from langchain import Streaming
+from langchain_community.chat_models import ChatAnthropic
 
 
 #수익화 함수
