@@ -12,7 +12,13 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains import RetrievalQA
 import streamlit as st
 import tempfile
+from streamlit_extras.buy_me_a_coffee import button
 
+#수익화 함수
+def BMC():
+    button(username="fake-username", floating=True, width=221)
+
+BMC()
 #제목
 st.title("ChatPDF")
 st.write("---")
