@@ -69,9 +69,9 @@ if uploaded_file is not None:
             chat_box = st.empty()
             llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
             qa_chain = RetrievalQA.from_chain_type(llm,retriever=db.as_retriever())
-            # 스트림 생성
-            chat = ChatAnthropic(model="gpt-3.5-turbo", anthropic_api_key=OPENAI_API_KEY)
-            for chunk in chat.stream(qa_chain):
-                print(chunk.content, end="", flush=True)
-            qa_chain({"query": question})
-            #st.write(result["result"])
+            # 스트림 생성(미구현)
+            #chat = ChatAnthropic(model="gpt-3.5-turbo",)
+            #for chunk in chat.stream(qa_chain):
+            #    print(chunk.content, end="", flush=True)
+            result = qa_chain({"query": question})
+            st.write(result["result"])
