@@ -18,7 +18,7 @@ from langchain_community.chat_models import ChatAnthropic
 
 #수익화 함수
 def BMC():
-    button(username="buymeacoffee.com/silverstone", floating=True, width=221)
+    button(username=silverstone, floating=True, width=221)
 
 BMC()
 #제목
