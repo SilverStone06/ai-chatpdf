@@ -54,8 +54,6 @@ if uploaded_file is not None:
     )
     texts = text_splitter.split_documents(pages)
 
-    #openai_api_key = os.getenv("OPEN_API_KEY")
-    #embeddings_model = OpenAIEmbeddings(api_key="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")
     embeddings_model = OpenAIEmbeddings()
 
 # load it into Chroma
