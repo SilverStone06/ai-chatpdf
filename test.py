@@ -84,5 +84,4 @@ if uploaded_file is not None:
             # 스트림
             # 생성자에 chain 을 매개변수로 전달하여 chain 객체를 생성합니다.
             chain = StreamChain(qa_chain)
-            result = qa_chain({"query": question})
-            st.write(result["result"])
+            st.write(chain)
