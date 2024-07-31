@@ -21,6 +21,20 @@ def BMC():
     button(username="silverstone", floating=True, width=221)
 
 BMC()
+
+# stream 함수
+class StreamChain:
+    def __init__(self, chain):
+        self.chain = chain
+
+    def stream(self, query):
+        response = self.chain.stream(query)
+        complete_response = ""
+        for token in response:
+            print(token, end="", flush=True)
+            complete_response += token
+        return complete_response
+
 #제목
 st.title("ChatPDF")
 st.write("---")
@@ -67,9 +81,8 @@ if uploaded_file is not None:
             chat_box = st.empty()
             llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
             qa_chain = RetrievalQA.from_chain_type(llm,retriever=db.as_retriever())
-            # 스트림 생성(미구현)
-            #chat = ChatAnthropic(model="gpt-3.5-turbo",)
-            #for chunk in chat.stream(qa_chain):
-            #    print(chunk.content, end="", flush=True)
+            # 스트림
+            # 생성자에 chain 을 매개변수로 전달하여 chain 객체를 생성합니다.
+            chain = StreamChain(qa_chain)
             result = qa_chain({"query": question})
             st.write(result["result"])
