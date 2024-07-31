@@ -82,7 +82,8 @@ if uploaded_file is not None:
             llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
             qa_chain = RetrievalQA.from_chain_type(llm,retriever=db.as_retriever())
             # 스트림
-            # 생성자에 chain 을 매개변수로 전달하여 chain 객체를 생성합니다.
-            chain = StreamChain(qa_chain)
-            result = chain.stream({"query": question})
+            #chat = ChatAnthropic(model="gpt-3.5-turbo",)
+            #for chunk in chat.stream(qa_chain):
+            #    print(chunk.content, end="", flush=True)
+            result = qa_chain({"query": question})
             st.write(result["result"])
